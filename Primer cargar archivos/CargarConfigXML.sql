@@ -60,6 +60,23 @@ BEGIN
 		FROM @xQuery.nodes('/Data/TiposUnidades/TipoUnidad') AS TempXML (x)
 
 	-------------------------------------------------------------------------
+		-- Insertar datos de Elementosfijos
+		INSERT INTO [dbo].[ElementosFijos]
+		(
+		  idTipoUnidad
+		, Id
+		, Nombre
+		, Valor
+		)
+		SELECT
+		 [dbo].[TiposUnidades].Id
+		, x.value('@Id', 'INT') 
+		, x.value('@Nombre', 'VARCHAR(255)')
+		, x.value('@Valor', 'INT')
+		FROM @xQuery.nodes('/Data/ElementosFijos/ElementoFijo') AS TempXML (x)
+		LEFT JOIN [dbo].[TiposUnidades] on x.value('@IdTipoUnidad','INT') = [dbo].[TiposUnidades].Id
+
+	---------------------------------------------------------------------------
 		-- Insertar datos de ElementoDeTipoTarifa
 		INSERT INTO [dbo].[ElementoDeTipoTarifa]
 		  (

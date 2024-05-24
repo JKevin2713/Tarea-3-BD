@@ -15,6 +15,13 @@ CREATE TABLE TiposUnidades (
     Tipo VARCHAR(255)
 );
 
+CREATE TABLE ElementosFijos (
+    Id INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+	Valor INT,
+	idTipoUnidad INT FOREIGN KEY REFERENCES TiposUnidades(Id)
+);
+
 CREATE TABLE ElementoDeTipoTarifa (
     Id INT IDENTITY (1, 1) PRIMARY KEY,
     idTipoTarifa INT FOREIGN KEY REFERENCES TiposTarifa(Id),
@@ -80,3 +87,43 @@ CREATE TABLE  UsoDatos (
     QGigas DECIMAL(4,2),
 	FechaOperacion DATE
 );
+
+CREATE TABLE ResultadosLlamadas (
+        FechaOperacion DATE,
+        Id INT,
+        NumeroDe BIGINT,
+        NumeroA BIGINT,
+        DiferenciaMinutos INT
+    );
+
+CREATE TABLE Llamadas800 (
+        Id INT IDENTITY(1,1) PRIMARY KEY,
+        FechaOperacion DATE,
+        DuracionMinutos INT,
+        Emisor BIGINT,
+        Receptor BIGINT,
+        ValorAntesMultiplicar INT,
+        ValorMultiplicado INT
+    );
+
+CREATE TABLE LlamadasOtro (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    FechaOperacion DATE,
+    DuracionMinutos INT,
+    Emisor BIGINT,
+    Receptor BIGINT,
+    ValorAntesMultiplicar INT,
+    ValorMultiplicado INT
+);
+
+
+CREATE TABLE Llamadas900 (
+        Id INT IDENTITY(1,1) PRIMARY KEY,
+        FechaOperacion DATE,
+        DuracionMinutos INT,
+        Emisor BIGINT,
+        Receptor BIGINT,
+        ValorAntesMultiplicar INT,
+        ValorMultiplicado INT
+    );
+

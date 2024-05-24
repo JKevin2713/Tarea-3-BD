@@ -8,7 +8,7 @@
 
 --------------------------------------------------------------------
 
-CREATE PROCEDURE [dbo].[XMLInsertarDatosMasivos]
+ALTER PROCEDURE [dbo].[XMLInsertarDatosMasivos]
     @xml AS XML
 AS
 BEGIN

@@ -2,7 +2,7 @@ SELECT COUNT(*) AS Contratos
 FROM [Tarea 4].[dbo].[Contratos]
 
 SELECT COUNT(*) AS Clientes 
-FROM [Tarea 4].[dbo].[Clientes]
+FROM [hola].[dbo].[Clientes]
 --------------------------
 
 SELECT * FROM dbo.TiposUnidades
@@ -10,6 +10,7 @@ SELECT * FROM dbo.ElementoDeTipoTarifa
 SELECT * FROM dbo.TipoRelacionesFamiliares
 SELECT * FROM dbo.TiposTarifa
 SELECT * FROM dbo.TiposElemento
+SELECT * FROM dbo.ElementosFijos
 
 DROP TABLE dbo.TiposElemento
 DROP TABLE dbo.TiposUnidades
@@ -35,3 +36,4 @@ DROP TABLE dbo.LlamadaTelefonica
 DROP TABLE dbo.PagoFactura
 DROP TABLE dbo.RelacionFamiliar
 DROP TABLE dbo.UsoDatos
+DROP TABLE dbo.Llamadas900
