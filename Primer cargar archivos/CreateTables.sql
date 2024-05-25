@@ -4,30 +4,24 @@ CREATE TABLE TiposTarifa (
     Id INT PRIMARY KEY,
     Nombre VARCHAR(255)
 );
-
-CREATE TABLE TiposElemento (
-    Id INT PRIMARY KEY,
-    Nombre VARCHAR(255)
-);
-
 CREATE TABLE TiposUnidades (
     Id INT PRIMARY KEY,
     Tipo VARCHAR(255)
 );
 
-CREATE TABLE ElementosFijos (
+CREATE TABLE TiposElemento (
     Id INT PRIMARY KEY,
     Nombre VARCHAR(255),
-	Valor INT,
-	idTipoUnidad INT FOREIGN KEY REFERENCES TiposUnidades(Id)
+	idTipoUnidad INT FOREIGN KEY REFERENCES TiposUnidades(Id),
+	EsFijo BIT
 );
+
 
 CREATE TABLE ElementoDeTipoTarifa (
     Id INT IDENTITY (1, 1) PRIMARY KEY,
     idTipoTarifa INT FOREIGN KEY REFERENCES TiposTarifa(Id),
     idTipoElemento INT FOREIGN KEY REFERENCES TiposElemento(Id),
 	Valor INT,
-    idTipoUnidad INT FOREIGN KEY REFERENCES TiposUnidades(Id)
 );
 
 CREATE TABLE TipoRelacionesFamiliares (
@@ -37,10 +31,6 @@ CREATE TABLE TipoRelacionesFamiliares (
 
 -------------------------------------------
 
-CREATE TABLE FechaOperacion (
-    Id INT IDENTITY (1, 1) PRIMARY KEY,
-    Fecha DATE
-);
 
 CREATE TABLE Clientes (
     Id INT IDENTITY (1, 1) PRIMARY KEY,

@@ -45,11 +45,8 @@ BEGIN
     CLOSE curLlamadas;
     DEALLOCATE curLlamadas;
 
+
 END;
 
 EXEC RestarHorasLlamadas
-SELECT * FROM ResultadosLlamadas
-
-SELECT Emisor, SUM(DuracionMinutos) AS TotalMinutos, SUM(ValorMultiplicado) AS TotalValor
-FROM Llamadas800
-GROUP BY Emisor;
+SELECT * FROM ResultadosLLamadas

@@ -45,7 +45,8 @@ BEGIN
     CLOSE curLlamadas;
     DEALLOCATE curLlamadas;
 
+
 END;
 
 EXEC RestarHorasLlamadas
-SELECT * FROM ResultadosLlamadas
+SELECT * FROM ResultadosLLamadas

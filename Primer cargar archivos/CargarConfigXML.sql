@@ -36,44 +36,33 @@ BEGIN
 		FROM @xQuery.nodes('/Data/TiposTarifa/TipoTarifa') AS TempXML(x)
 
 	---------------------------------------------------------------------------
-		-- Insertar datos de TiposElemento
-		INSERT INTO [dbo].[TiposElemento]
-		(
-		  Id
-		, Nombre
-		)
-		SELECT
-		  x.value('@Id', 'INT') 
-		, x.value('@Nombre', 'VARCHAR(255)')
-		FROM @xQuery.nodes('/Data/TiposElemento/TipoElemento') AS TempXML (x)
-
-	---------------------------------------------------------------------------
-		-- Insertar datos de TiposMovimientos
+			-- Insertar datos de TiposMovimientos
 		INSERT INTO [dbo].[TiposUnidades]
 		(
 		  Id
 		, Tipo
+
 		)
 		SELECT
 		  x.value('@Id', 'INT') 
 		, x.value('@Tipo', 'NVARCHAR(255)') 
 		FROM @xQuery.nodes('/Data/TiposUnidades/TipoUnidad') AS TempXML (x)
-
-	-------------------------------------------------------------------------
-		-- Insertar datos de Elementosfijos
-		INSERT INTO [dbo].[ElementosFijos]
+		
+		---------------------------------------------------------------------------
+		-- Insertar datos de TiposElemento
+		INSERT INTO [dbo].[TiposElemento]
 		(
-		  idTipoUnidad
-		, Id
+		  Id
 		, Nombre
-		, Valor
+		, idTipoUnidad
+		, EsFijo
 		)
 		SELECT
-		 [dbo].[TiposUnidades].Id
-		, x.value('@Id', 'INT') 
+		  x.value('@Id', 'INT') 
 		, x.value('@Nombre', 'VARCHAR(255)')
-		, x.value('@Valor', 'INT')
-		FROM @xQuery.nodes('/Data/ElementosFijos/ElementoFijo') AS TempXML (x)
+		, [dbo].[TiposUnidades].Id
+		, x.value('@EsFijo', 'BIT')
+		FROM @xQuery.nodes('/Data/TiposElemento/TipoElemento') AS TempXML (x)
 		LEFT JOIN [dbo].[TiposUnidades] on x.value('@IdTipoUnidad','INT') = [dbo].[TiposUnidades].Id
 
 	---------------------------------------------------------------------------
@@ -82,19 +71,16 @@ BEGIN
 		  (
 			idTipoTarifa
 		  , IdTipoElemento
-		  , IdTipoUnidad
 		  , Valor
 		  )
 		  SELECT
 		    [dbo].[TiposTarifa].Id
 		  , [dbo].[TiposElemento].Id
-		  , [dbo].[TiposUnidades].Id
 		  , x.value('@Valor', 'INT')
   
 		  FROM @xQuery.nodes('/Data/ElementosDeTipoTarifa/ElementoDeTipoTarifa') AS TempXML (x)
 		  LEFT JOIN [dbo].[TiposTarifa] on x.value('@idTipoTarifa','INT') = [dbo].[TiposTarifa].Id
 		  LEFT JOIN [dbo].[TiposElemento] on x.value('@IdTipoElemento','INT') = [dbo].[TiposElemento].Id
-		  LEFT JOIN [dbo].[TiposUnidades] on x.value('@IdTipoUnidad','INT') = [dbo].[TiposUnidades].Id
 
 	-------------------------------------------------------------------------
 		-- Insertar datos de TipoRelacionesFamiliares
