@@ -4,23 +4,24 @@ CREATE TABLE TiposTarifa (
     Id INT PRIMARY KEY,
     Nombre VARCHAR(255)
 );
-
-CREATE TABLE TiposElemento (
-    Id INT PRIMARY KEY,
-    Nombre VARCHAR(255)
-);
-
 CREATE TABLE TiposUnidades (
     Id INT PRIMARY KEY,
     Tipo VARCHAR(255)
 );
+
+CREATE TABLE TiposElemento (
+    Id INT PRIMARY KEY,
+    Nombre VARCHAR(255),
+	idTipoUnidad INT FOREIGN KEY REFERENCES TiposUnidades(Id),
+	EsFijo BIT
+);
+
 
 CREATE TABLE ElementoDeTipoTarifa (
     Id INT IDENTITY (1, 1) PRIMARY KEY,
     idTipoTarifa INT FOREIGN KEY REFERENCES TiposTarifa(Id),
     idTipoElemento INT FOREIGN KEY REFERENCES TiposElemento(Id),
 	Valor INT,
-    idTipoUnidad INT FOREIGN KEY REFERENCES TiposUnidades(Id)
 );
 
 CREATE TABLE TipoRelacionesFamiliares (
@@ -30,10 +31,6 @@ CREATE TABLE TipoRelacionesFamiliares (
 
 -------------------------------------------
 
-CREATE TABLE FechaOperacion (
-    Id INT IDENTITY (1, 1) PRIMARY KEY,
-    Fecha DATE
-);
 
 CREATE TABLE Clientes (
     Id INT IDENTITY (1, 1) PRIMARY KEY,
@@ -80,3 +77,43 @@ CREATE TABLE  UsoDatos (
     QGigas DECIMAL(4,2),
 	FechaOperacion DATE
 );
+
+CREATE TABLE ResultadosLlamadas (
+        FechaOperacion DATE,
+        Id INT,
+        NumeroDe BIGINT,
+        NumeroA BIGINT,
+        DiferenciaMinutos INT
+    );
+
+CREATE TABLE Llamadas800 (
+        Id INT IDENTITY(1,1) PRIMARY KEY,
+        FechaOperacion DATE,
+        DuracionMinutos INT,
+        Emisor BIGINT,
+        Receptor BIGINT,
+        ValorAntesMultiplicar INT,
+        ValorMultiplicado INT
+    );
+
+CREATE TABLE LlamadasOtro (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    FechaOperacion DATE,
+    DuracionMinutos INT,
+    Emisor BIGINT,
+    Receptor BIGINT,
+    ValorAntesMultiplicar INT,
+    ValorMultiplicado INT
+);
+
+
+CREATE TABLE Llamadas900 (
+        Id INT IDENTITY(1,1) PRIMARY KEY,
+        FechaOperacion DATE,
+        DuracionMinutos INT,
+        Emisor BIGINT,
+        Receptor BIGINT,
+        ValorAntesMultiplicar INT,
+        ValorMultiplicado INT
+    );
+
