@@ -16,6 +16,12 @@ CREATE TABLE TiposElemento (
 	EsFijo BIT
 );
 
+CREATE TABLE ValorTipoElementoFijo (
+    Id INT IDENTITY (1, 1) PRIMARY KEY,
+    Valor INT,
+    IdTipoElemento INT FOREIGN KEY REFERENCES TiposElemento(Id)
+);
+
 
 CREATE TABLE ElementoDeTipoTarifa (
     Id INT IDENTITY (1, 1) PRIMARY KEY,
@@ -78,6 +84,62 @@ CREATE TABLE  UsoDatos (
 	FechaOperacion DATE
 );
 
+CREATE TABLE ResultadosLlamadasTOTALES (
+    FechaOperacion DATE,
+    Id INT,
+    NumeroDe BIGINT,
+    NumeroA BIGINT,
+    DiferenciaMinutos INT,
+    ValorAntesMultiplicar INT,
+    ValorMultiplicado INT,
+);
+
+
+
+CREATE TABLE Facturas (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    IdContrato INT FOREIGN KEY REFERENCES Contratos(Id),
+    TotalPagoAntesIva DECIMAL(18, 2),
+    TotalPagoDespuesIva DECIMAL(18, 2),
+    MultaFacturaPendiente  DECIMAL(18, 2),
+    TotalPagar DECIMAL(18, 2),
+    FechaFactura DATE,
+    FechaPago DATE,
+    EstaPagada BIT
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CREATE TABLE ResultadosLlamadas (
         FechaOperacion DATE,
         Id INT,
@@ -87,6 +149,38 @@ CREATE TABLE ResultadosLlamadas (
     );
 
 CREATE TABLE Llamadas800 (
+        Id INT IDENTITY(1,1) PRIMARY KEY,
+        FechaOperacion DATE,
+        DuracionMinutos INT,
+        Emisor BIGINT,
+        Receptor BIGINT,
+        ValorAntesMultiplicar INT,
+        ValorMultiplicado INT
+    );
+
+
+CREATE TABLE Llamadas900 (
+        Id INT IDENTITY(1,1) PRIMARY KEY,
+        FechaOperacion DATE,
+        DuracionMinutos INT,
+        Emisor BIGINT,
+        Receptor BIGINT,
+        ValorAntesMultiplicar INT,
+        ValorMultiplicado INT
+    );
+
+
+
+CREATE TABLE Llamadas911 (
+        Id INT IDENTITY(1,1) PRIMARY KEY,
+        FechaOperacion DATE,
+        DuracionMinutos INT,
+        Emisor BIGINT,
+        Receptor BIGINT,
+		idTipoTarifa INT FOREIGN KEY REFERENCES ValorTipoElementoFijo(Id)
+    );
+
+CREATE TABLE Llamadas110 (
         Id INT IDENTITY(1,1) PRIMARY KEY,
         FechaOperacion DATE,
         DuracionMinutos INT,
@@ -107,13 +201,9 @@ CREATE TABLE LlamadasOtro (
 );
 
 
-CREATE TABLE Llamadas900 (
-        Id INT IDENTITY(1,1) PRIMARY KEY,
-        FechaOperacion DATE,
-        DuracionMinutos INT,
-        Emisor BIGINT,
-        Receptor BIGINT,
-        ValorAntesMultiplicar INT,
-        ValorMultiplicado INT
-    );
-
+CREATE TABLE PrimerosClientes (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Identificacion INT,
+    FechaOperacion DATE,
+    ProximaFechaPago DATE
+);

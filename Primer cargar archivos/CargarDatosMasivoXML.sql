@@ -7,6 +7,11 @@
 -- el cual se lee y se mapea a las tablas segun corresponde
 
 --------------------------------------------------------------------
+--SELECT *FROM Facturas
+
+--SELECT COUNT(*) AS TotalVeces
+--FROM Facturas
+--WHERE IdContrato= 19;
 
 CREATE PROCEDURE [dbo].[XMLInsertarDatosMasivos]
     @xml AS XML
@@ -57,6 +62,8 @@ BEGIN
             LEFT JOIN [dbo].[Clientes] ON x.value('@DocIdCliente', 'INT') = [dbo].[Clientes].Identificacion
             LEFT JOIN [dbo].[TiposTarifa] ON x.value('@TipoTarifa', 'INT') = [dbo].[TiposTarifa].Id;
 
+	
+
 		---------------------------------------------------------------------------
             -- Insertamos datos en la tabla LlamadaTelefonica
             INSERT INTO [dbo].[LlamadaTelefonica] (NumeroDe, NumeroA, Inicio, Fin, FechaOperacion)
@@ -100,6 +107,8 @@ BEGIN
             FROM @xQuery.nodes('/Operaciones/FechaOperacion[@fecha = sql:variable("@actual")]/UsoDatos') AS TempXML (x)
             LEFT JOIN [dbo].[Contratos] ON x.value('@Numero', 'BIGINT') = [dbo].[Contratos].Numero;
 		---------------------------------------------------------------------------
+							 -- Llamar al procedimiento para ingresar los datos de los primeros clientes ingresados
+            EXEC [dbo].[agregarFactura] @fechaOperacion = @actual;
 
             -- Actualizamos @actual para pasar a la siguiente iteración
             SET @actual = DATEADD(DAY, 1, @actual); -- Incrementamos la fecha actual en un día

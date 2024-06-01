@@ -1,4 +1,4 @@
-ALTER PROCEDURE RestarHorasLlamadas
+CREATE PROCEDURE RestarHorasLlamadas
 AS
 BEGIN
     SET NOCOUNT ON;

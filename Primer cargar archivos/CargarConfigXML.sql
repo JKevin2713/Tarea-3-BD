@@ -1,3 +1,4 @@
+
 --------------------------------------------------------------------
 --Jefferson Salas, Kevin Jimenez, María Félix Méndez 
 -- Tarea Programada 03 | Base de Datos I
@@ -65,6 +66,21 @@ BEGIN
 		FROM @xQuery.nodes('/Data/TiposElemento/TipoElemento') AS TempXML (x)
 		LEFT JOIN [dbo].[TiposUnidades] on x.value('@IdTipoUnidad','INT') = [dbo].[TiposUnidades].Id
 
+		---------------------------------------------------------------------------
+		-- Insertar datos de valor de ValorTipoElementoFijo
+		INSERT INTO [dbo].[ValorTipoElementoFijo]
+		(
+		  Valor
+		, IdTipoElemento
+		)
+		SELECT
+		  x.value('@Valor', 'INT') 
+		, [dbo].[TiposElemento].Id
+
+		FROM @xQuery.nodes('/Data/TiposElemento/TipoElemento') AS TempXML (x)
+		LEFT JOIN [dbo].[TiposElemento] on x.value('@Id','INT') = [dbo].[TiposElemento].Id
+		WHERE x.value('@EsFijo', 'BIT') = 1;
+		
 	---------------------------------------------------------------------------
 		-- Insertar datos de ElementoDeTipoTarifa
 		INSERT INTO [dbo].[ElementoDeTipoTarifa]
