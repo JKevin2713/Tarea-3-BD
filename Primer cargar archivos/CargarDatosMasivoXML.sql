@@ -68,13 +68,13 @@ BEGIN
             -- Insertamos datos en la tabla LlamadaTelefonica
             INSERT INTO [dbo].[LlamadaTelefonica] (NumeroDe, NumeroA, Inicio, Fin, FechaOperacion)
             SELECT
-                [dbo].[Contratos].Numero AS NumeroDe,
+				x.value('@NumeroDe', 'BIGINT') AS NumeroDe,
                 x.value('@NumeroA', 'BIGINT') AS NumeroA,
                 CONVERT(DATETIME, x.value('@Inicio', 'NVARCHAR(30)'), 120) AS Inicio,
                 CONVERT(DATETIME, x.value('@Final', 'NVARCHAR(30)'), 120) AS Fin,
                 @actual AS FechaOperacion
             FROM @xQuery.nodes('/Operaciones/FechaOperacion[@fecha = sql:variable("@actual")]/LlamadaTelefonica') AS TempXML (x)
-            LEFT JOIN [dbo].[Contratos] ON x.value('@NumeroDe', 'BIGINT') = [dbo].[Contratos].Numero;
+
 
 		---------------------------------------------------------------------------
             -- Insertamos datos en la tabla PagoFactura
@@ -107,8 +107,7 @@ BEGIN
             FROM @xQuery.nodes('/Operaciones/FechaOperacion[@fecha = sql:variable("@actual")]/UsoDatos') AS TempXML (x)
             LEFT JOIN [dbo].[Contratos] ON x.value('@Numero', 'BIGINT') = [dbo].[Contratos].Numero;
 		---------------------------------------------------------------------------
-							 -- Llamar al procedimiento para ingresar los datos de los primeros clientes ingresados
-            EXEC [dbo].[agregarFactura] @fechaOperacion = @actual;
+			EXEC [dbo].[ProcesarLlamadasEmpresaX] @actual;
 
             -- Actualizamos @actual para pasar a la siguiente iteración
             SET @actual = DATEADD(DAY, 1, @actual); -- Incrementamos la fecha actual en un día

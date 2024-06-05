@@ -2,7 +2,7 @@ SELECT COUNT(*) AS Contratos
 FROM [EJEMPLO].[dbo].[Contratos]
 
 SELECT COUNT(*) AS LlamadaTelefonica
-FROM [EJEMPLO].[dbo].[LlamadaTelefonica]
+FROM [lolo].[dbo].[LlamadaTelefonica]
 
 SELECT COUNT(*) AS Clientes 
 FROM [Tarea 4].[dbo].[Clientes]
@@ -32,7 +32,7 @@ DROP TABLE dbo.TiposTarifa
 -----------------------------------
 SELECT * FROM dbo.Clientes
 SELECT * FROM dbo.Contratos
-SELECT * FROM dbo.LlamadaTelefonica
+SELECT * FROM dbo.LlamadasX
 SELECT * FROM dbo.PagoFactura
 SELECT * FROM dbo.RelacionFamiliar
 SELECT * FROM dbo.UsoDatos
