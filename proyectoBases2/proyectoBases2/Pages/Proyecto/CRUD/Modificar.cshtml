@@ -1,0 +1,53 @@
+﻿@page
+@model proyectoBases2.Pages.Proyecto.CRUD.ModificarModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar clientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Editar empleado</h2>
+
+        <form method="POST">
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Identificación</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="nombre" value="@Model.Cliente.nombreCliente">
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Puesto</label>
+                <div class="col-sm-6">
+                    <select class="form-select" id="tipoTarifa" name="tipoTarifa">
+                        <option value="">Selecciona un el tipo tarifa</option>
+                        @foreach (var puesto in Model.cargaTipoTarifa.ListTipoTarifa)
+                        {
+                            <option value="@puesto.id">@puesto.NombreTarifa</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="offset-sm-3 col-sm-3 d-grid">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+                <div class="col-sm-3 d-grid">
+                    <a class="btn btn-outline-primary" href="/Proyecto/CRUD/IndexCRUD" role="button">Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

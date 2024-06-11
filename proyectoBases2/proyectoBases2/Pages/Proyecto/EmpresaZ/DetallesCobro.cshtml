@@ -1,0 +1,62 @@
+﻿@page
+@model proyectoBases2.Pages.Proyecto.EmpresaZ.DetallesCobroModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de detalles de factura</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tabla detalles de factura</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tarifa Basica</th>
+                    <th>Minutos exceso</th>
+                    <th>Gigas exceso</th>
+                    <th>Minutos llamadas familiar</th>
+                    <th>Cobro 911</th>
+                    <th>Cobro 110</th>
+                    <th>Cobro 900</th>
+                    <th>Cobro 800</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.listaDetalleFactura)
+                {
+                    <tr>
+                        <td>@item.tarifaBasica</td>
+                        <td>@item.minUsoExceso</td>
+                        <td>@item.gigasUsoExceso</td>
+                        <td>@item.minLlamadaFamilia</td>
+                        <td>@item.cobro911</td>
+                        <td>@item.cobro110</td>
+                        <td>@item.cobro900</td>
+                        <td>@item.cobro800</td>
+                        <td>
+                            <a class='btn btn-primary btn-sm' href='/Proyecto/EmpresaZ/DetallesLlamadas?idFactura=@Model.idFactura&&Numero=@Model.Numero&&FechaFactura=@Model.FechaFactura'>Detalle llamadas</a>
+                            <a class='btn btn-success btn-sm' href='/Proyecto/EmpresaZ/DetallesGigas?idFactura=@Model.idFactura&&Numero=@Model.Numero&&FechaFactura=@Model.FechaFactura'>Detalle uso datos</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+           
+        </table>
+
+        <div class="row mb-3">
+            <div class="col-sm-3 d-grid">
+                <a class="btn btn-outline-primary" href="/Proyecto/EmpresaZ/IndexZ?Numero=@Model.Numero" role="button">Regresar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

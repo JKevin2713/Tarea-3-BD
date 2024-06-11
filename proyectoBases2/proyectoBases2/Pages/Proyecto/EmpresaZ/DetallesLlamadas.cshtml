@@ -1,0 +1,51 @@
+﻿@page
+@model proyectoBases2.Pages.Proyecto.EmpresaZ.DetallesLlamadasModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de llamadas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tabla detalles de llamadas</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora de inicio</th>
+                    <th>Hora de fin</th>
+                    <th>Numero llamado</th>
+                    <th>Cantidad de minutos</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.listaDetalleLlamada)
+                {
+                    <tr>
+                        <td>@item.FechaOperacion</td>
+                        <td>@item.FechaInicio</td>
+                        <td>@item.FechaFin</td>
+                        <td>@item.NumeroA</td>
+                        <td>@item.cantMin</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+        <div class="row mb-3">
+            <div class="col-sm-3 d-grid">
+                <a class="btn btn-outline-primary" href="/Proyecto/EmpresaZ/DetallesCobro?idFactura=@Model.idFactura&&Numero=@Model.Numero&&FechaFactura=@Model.FechaFactura" role="button">Regresar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

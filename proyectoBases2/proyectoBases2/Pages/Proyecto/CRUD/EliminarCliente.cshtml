@@ -1,0 +1,40 @@
+﻿@page
+@using System.Data.SqlClient
+@using System.Data;
+@{
+    string numeroCliente = Request.Query["numeroCliente"];
+    Console.WriteLine(numeroCliente);
+    try
+    {
+        string connectionString = "Data Source=LAPTOP-K8CP12F2;Initial Catalog=Tarea4;Integrated Security=True;Encrypt=False";
+        using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+        {
+            sqlConnection.Open();
+
+            // Crear un comando SQL para llamar al procedimiento almacenado
+            using (SqlCommand command = new SqlCommand("DesactivarContrato", sqlConnection))
+            {
+                // Especificar que el comando es un procedimiento almacenado
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Parámetros de entrada
+                command.Parameters.AddWithValue("@InNumeroDelContrato", numeroCliente);
+
+                SqlParameter outResultCodeParam = new SqlParameter("@OutResulTCode", SqlDbType.Int);
+                outResultCodeParam.Direction = ParameterDirection.Output;
+                command.Parameters.Add(outResultCodeParam);
+
+                command.ExecuteNonQuery();
+            }
+
+            sqlConnection.Close();
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("No paso");
+    }
+
+    Response.Redirect("/Proyecto/CRUD/IndexCRUD");
+
+}

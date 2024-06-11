@@ -1,0 +1,48 @@
+﻿@page
+@model proyectoBases2.Pages.Proyecto.EmprezaXyZ.IndexXModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de cuenta de empresa X </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tabla de cuenta de empresa X</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Total de minutos de llamadas entrantes</th>
+                    <th>Total de minutos de llamadas salientes</th>
+                    <th>Opcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.infoLlamadasXyY)
+                {
+                    <tr>
+                        <td>@item.totalMinLlamadasEntrantes</td>
+                        <td>@item.totalMinLlamadasSalientes</td>
+                        <td>
+                            <a class='btn btn-primary btn-sm' href='/Proyecto/EmprezaXyZ/DetalleLlamadasX?Numero=@Model.Numero&&FechaCorte=@item.FechaCorte'>Detalles de las llamadas</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+        <div class="row mb-3">
+            <div class="col-sm-3 d-grid">
+                <a class="btn btn-outline-primary" href="/Proyecto/EmpresaZ/IndexZ" role="button">Regresar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

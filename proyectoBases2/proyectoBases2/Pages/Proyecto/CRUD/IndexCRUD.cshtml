@@ -1,0 +1,62 @@
+﻿@page
+@model proyectoBases2.Pages.Proyecto.CRUD.IndexCRUDModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de clientes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>Desactivar Empleado</title>
+    <script>
+        function confirmarDesactivacion(numeroCliente) {
+            if (confirm("¿Estás seguro de que deseas desactivar este empleado?")) {
+                // Redirigir a la URL para eliminar el cliente
+                window.location.href = '/Proyecto/CRUD/EliminarCliente?numeroCliente=' + numeroCliente;
+            } else {
+                // Redirigir a la página principal del CRUD
+                window.location.href = '/Proyecto/CRUD/IndexCRUD';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Tabla de clientes</h2>
+        <a class='btn btn-primary btn-sm mb-3' href='/Proyecto/CRUD/CrearCliente'>Nuevo cliente </a>
+        <a class='btn btn-outline-primary btn-sm mb-3' href='/Proyecto/EmpresaZ/IndexZ'>Regresar </a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fecha Operacion</th>
+                    <th>Nombre</th>
+                    <th>Cedula</th>
+                    <th>Numero cedular</th>
+                    <th>Tipo tarifa</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.listaClientes)
+                {
+                    <tr>
+                        <td>@item.fechaOperacion</td>
+                        <td>@item.nombreCliente</td>
+                        <td>@item.cedulaCliente</td>
+                        <td>@item.numeroCliente</td>
+                        <td>@item.tipoTarifa</td>
+                        <td>
+                            <a class='btn btn-primary btn-sm' href='/Proyecto/CRUD/Modificar?numeroCliente=@item.numeroCliente'>Modificar</a>
+                            <button type="button" class='btn btn-danger btn-sm' onclick='confirmarDesactivacion("@item.numeroCliente")'>Eliminar</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

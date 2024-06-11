@@ -1,0 +1,62 @@
+﻿@page
+@model proyectoBases2.Pages.Proyecto.EmpresaZ.IndexZModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de empleados</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Tabla facturas</h2>
+        <a class='btn btn-primary btn-sm mb-3' href='/Proyecto/EmprezaXyZ/IndexX?Numero=@Model.Numero'> Empreza X </a>
+        <a class='btn btn-primary btn-sm mb-3' href='/Proyecto/EmprezaXyZ/IndexY?Numero=@Model.Numero'> Empreza Y</a>
+        <a class='btn btn-primary btn-sm mb-3' href='/Proyecto/CRUD/IndexCRUD?Numero=@Model.Numero'> CRUD</a>
+        <form method="post">
+            <input type="text" name="numero" id="numeroBuscar" value="@Model.Numero" />
+            <button type="submit">Filtrar</button>
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Pago antes IVA</th>
+                    <th>Pago despues IVA</th>
+                    <th>Multa facturas no pagadas</th>
+                    <th>Pago multas</th>
+                    <th>Fecha pago factura</th>
+                    <th>Fecha gracia pago</th>
+                    <th>Factura pagada?</th>
+                    <th>Opcion</th>
+                </tr>
+            </thead>
+            @if (Model.listaFactura != null)
+            {
+                <tbody>
+                    @foreach (var item in Model.listaFactura)
+                    {
+                        <tr>
+                            <td>@item.PagarAntesIVA</td>
+                            <td>@item.PagarDespuesIVA</td>
+                            <td>@item.multasNoPagadas</td>
+                            <td>@item.pagoTotal</td>
+                            <td>@item.FechaPagoFactura</td>
+                            <td>@item.FechaDiaGraciaPago</td>
+                            <td>@item.facturaPagada</td>
+                            <td>
+                                <a class='btn btn-primary btn-sm' href='/Proyecto/EmpresaZ/DetallesCobro?idFactura=@item.idFactura&&Numero=@item.Numero&&FechaFactura=@item.FechaPagoFactura'>Detalles cobro</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            }
+        </table>
+    </div>
+</body>
+</html>

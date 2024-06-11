@@ -1,0 +1,99 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = proyectoBases2
+build_property.RootNamespace = proyectoBases2
+build_property.ProjectDir = C:\Users\duran\OneDrive\Escritorio\SEMESTRE I 2024\proyectoBases2\proyectoBases2\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\duran\OneDrive\Escritorio\SEMESTRE I 2024\proyectoBases2\proyectoBases2
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/ConsultarClientes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxDb25zdWx0YXJDbGllbnRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/CrearCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxDcmVhckNsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/EliminarCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxFbGltaW5hckNsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/IndexCRUD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxJbmRleENSVUQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/Modificar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxNb2RpZmljYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmpresaZ/DetallesCobro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cRW1wcmVzYVpcRGV0YWxsZXNDb2Jyby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmpresaZ/DetallesGigas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cRW1wcmVzYVpcRGV0YWxsZXNHaWdhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmpresaZ/DetallesLlamadas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cRW1wcmVzYVpcRGV0YWxsZXNMbGFtYWRhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmpresaZ/IndexZ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cRW1wcmVzYVpcSW5kZXhaLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmprezaXyZ/DetalleLlamadasX.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cRW1wcmV6YVh5WlxEZXRhbGxlTGxhbWFkYXNYLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmprezaXyZ/DetalleLlamadasY.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cRW1wcmV6YVh5WlxEZXRhbGxlTGxhbWFkYXNZLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmprezaXyZ/IndexX.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cRW1wcmV6YVh5WlxJbmRleFguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmprezaXyZ/IndexY.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cRW1wcmV6YVh5WlxJbmRleFkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ogr0v2k43t
