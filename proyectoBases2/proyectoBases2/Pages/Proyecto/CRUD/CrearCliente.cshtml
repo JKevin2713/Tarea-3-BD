@@ -3,6 +3,7 @@
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,31 +17,17 @@
         <h2>Crear nuevo cliente</h2>
 
         <form method="post">
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Identificación</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="identificacion" value="@Model.Clientes.Identificacion">
+                </div>
+            </div>
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Nombre</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="nombre" value="@Model.Cliente.nombreCliente">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Identificación</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="identificacion" value="@Model.Cliente.cedulaCliente">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Puesto</label>
-                <div class="col-sm-6">
-                    <select class="form-select" id="tipoTarifa" name="tipoTarifa">
-                        <option value="">Selecciona un el tipo tarifa</option>
-                        @foreach (var puesto in Model.cargaTipoTarifa.ListTipoTarifa)
-                        {
-                            <option value="@puesto.id">@puesto.NombreTarifa</option>
-                        }
-                    </select>
+                    <input type="text" class="form-control" name="nombre" value="@Model.Clientes.Nombre">
                 </div>
             </div>
 
@@ -53,6 +40,7 @@
                     <a class="btn btn-outline-primary" href="/Proyecto/CRUD/IndexCRUD" role="button">Regresar</a>
                 </div>
             </div>
+
         </form>
     </div>
 

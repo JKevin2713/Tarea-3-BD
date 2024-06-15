@@ -86,3 +86,13 @@ public class tipoTarifa
     public int id;
     public string NombreTarifa;
 }
+
+public class Clientes
+{
+    public int Id;
+    public int Identificacion;
+    public string Nombre;
+    public DateTime FechaOperacion;
+
+}
+

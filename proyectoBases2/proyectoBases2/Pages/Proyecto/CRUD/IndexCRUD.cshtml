@@ -28,6 +28,8 @@
     <div class="container">
         <h2>Tabla de clientes</h2>
         <a class='btn btn-primary btn-sm mb-3' href='/Proyecto/CRUD/CrearCliente'>Nuevo cliente </a>
+        <a class='btn btn-success btn-sm mb-3' href='/Proyecto/CRUD/CrearContrato'>Nuevo contrato </a>
+        <!--a class='btn btn-danger btn-sm mb-3' href='/Proyecto/CRUD/CrearContrato'>Modificar cliente</-->
         <a class='btn btn-outline-primary btn-sm mb-3' href='/Proyecto/EmpresaZ/IndexZ'>Regresar </a>
         <table class="table">
             <thead>
@@ -50,7 +52,7 @@
                         <td>@item.numeroCliente</td>
                         <td>@item.tipoTarifa</td>
                         <td>
-                            <a class='btn btn-primary btn-sm' href='/Proyecto/CRUD/Modificar?numeroCliente=@item.numeroCliente'>Modificar</a>
+                            <a class='btn btn-primary btn-sm' href='/Proyecto/CRUD/ModificarContrato?numeroCliente=@item.numeroCliente'>Modificar</a>
                             <button type="button" class='btn btn-danger btn-sm' onclick='confirmarDesactivacion("@item.numeroCliente")'>Eliminar</button>
                         </td>
                     </tr>

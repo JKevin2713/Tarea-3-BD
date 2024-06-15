@@ -38,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxDcmVhckNsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/CrearContrato.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxDcmVhckNvbnRyYXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/EliminarCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxFbGltaW5hckNsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,8 +50,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxJbmRleENSVUQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/Modificar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxNb2RpZmljYXIuY3NodG1s
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/ModificarCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxNb2RpZmljYXJDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/CRUD/ModificarContrato.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJveWVjdG9cQ1JVRFxNb2RpZmljYXJDb250cmF0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/duran/OneDrive/Escritorio/SEMESTRE I 2024/proyectoBases2/proyectoBases2/Pages/Proyecto/EmpresaZ/DetallesCobro.cshtml]
